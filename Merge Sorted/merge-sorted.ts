@@ -26,8 +26,23 @@
 // The result of the merge is [1].
 // Note that because m = 0, there are no elements in nums1. The 0 is only there to ensure the merge result can fit in nums1.
 
-function mergeSorted(nums1: number[], nums2: number[], m: number, n: number): number[] {
-  
+function mergeSorted(nums1: number[], nums2: number[], m: number, n: number): void {
+  //run while j < (m + n)
+  let j: number = 0;
+  let i: number = 0;
+  //run while j is less than m+n
+  while( j < ( m + n ) ){
+      //if nums2[i] <= nums1[i] splice it into nums1[i-1] and increment i
+      if(nums2[i] <= nums1[j] || nums2[i] && !nums1[j]){
+        nums1.splice(j, 0, nums2[i]);
+        i++;
+      }
+      j++;
+  }
+}
+
+function mergeSortedPure(nums1: number[], nums2: number[], m: number, n: number): number[] {
+
   //solve problem here
   let i: number = 0, j:number = 0;
   const result: number[] = [];
@@ -46,10 +61,12 @@ function mergeSorted(nums1: number[], nums2: number[], m: number, n: number): nu
       j++;
     }
   } 
-
   //return result array
   return result;
 }
+
+const result = mergeSorted([5,6,7], [1,6,9], 3, 3);
+console.log(result)
 
 
 module.exports = mergeSorted;
