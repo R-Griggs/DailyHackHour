@@ -25,3 +25,31 @@
 // Explanation: The arrays we are merging are [] and [1].
 // The result of the merge is [1].
 // Note that because m = 0, there are no elements in nums1. The 0 is only there to ensure the merge result can fit in nums1.
+
+function mergeSorted(nums1: number[], nums2: number[], m: number, n: number): number[] {
+  
+  //solve problem here
+  let i: number = 0, j:number = 0;
+  const result: number[] = [];
+
+  //run while i<num1.length or j < num2.length
+  while( i < nums1.length || j < nums2.length ) {
+
+    //push nums1[i] if nums1[i] < nums2[j] then increment i
+    if(nums1[i] <= nums2[j] || nums1[i] && !nums2[j]) {
+      result.push(nums1[i]);
+      i++;
+    }
+    //push nums2[j] if nums2[j] < nums1[i] then increment j
+    else if(nums2[j] <= nums1[i] || nums2[j] && !nums1[i]) {
+      result.push(nums2[j]);
+      j++;
+    }
+  } 
+
+  //return result array
+  return result;
+}
+
+
+module.exports = mergeSorted;
