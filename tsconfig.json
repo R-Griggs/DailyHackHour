@@ -1,11 +1,13 @@
 {
-  "include": ["problems/**/*", "Merge Sorted"],
+  "files": [
+    "merge-sorted.ts",
+    "remove-element.ts"
+  ],
   "compilerOptions": {
     "outDir": "./dist/",
     "noImplicitAny": true,
     "module": "commonjs",
     "target": "ES2016",
-    "jsx": "react-jsx",
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "Node",
