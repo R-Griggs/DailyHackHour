@@ -1,7 +1,10 @@
 {
   "files": [
     "merge-sorted.ts",
-    "remove-element.ts"
+    "remove-element.ts",
+    "remove-duplicates.ts",
+    "remove-duplicates-2.ts",
+    "frequency-counter.ts"
   ],
   "compilerOptions": {
     "outDir": "./dist/",
