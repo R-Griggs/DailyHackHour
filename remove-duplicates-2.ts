@@ -37,26 +37,22 @@
 // It does not matter what you leave beyond the returned k (hence they are underscores).
 
 function removeDuplicates(nums: number[]): number {
+  let count = 1;
+  let j = 1;
 
-  let count: number = 0;
-  let end: number = nums.length;
-  let m: number = 0;
+  for(let i = 1; i < nums.length; i++) {
 
+    nums[i-1] === nums[i] ? count++ : count = 1;
 
-  for(let i = 0; i < end; i++) {
-    if(nums[m] === nums[i] && count < 2) {
-      count ++;
-    }
-    else if(nums[m] === nums[i]) {
-      const cache: number = nums[i];
-      nums[i] = nums[i+1];
-      nums[i+1] = cache;
+    if(count <= 2 ) {
+      nums[j] = nums[i]
+      j++;
     }
   }
-  console.log(nums);
-  return 0;
+  console.log(nums)
+  return j;
 }
 
-removeDuplicates([1,1,1,2,2,3,4]);
+console.log(removeDuplicates([1, 1, 1, 1, 1, 2, 2, 3, 4, 5 ]));
 
 module.exports = removeDuplicates;

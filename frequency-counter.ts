@@ -36,9 +36,9 @@ function isAnagram(str1: string, str2: string): boolean {
 console.log(isAnagram('boomaaa', ''));
 
 
-
+//better version
 function isAnagram2(str1: string, str2: string): boolean {
-  
+
   //check string lengrths match
   if(str1.length !== str2.length) {
     return false;
@@ -53,7 +53,7 @@ function isAnagram2(str1: string, str2: string): boolean {
   //iterate over str2 and check against charCache
   for (let j = 0; j < str2.length; j++) {
     //check if curr char is in the cache
-    if(!charCache[str2[j]] || charCache[str2[j]] === 0){
+    if(!charCache[str2[j]]){
       return false;
     }
     charCache[str2[j]] --;
@@ -63,4 +63,12 @@ function isAnagram2(str1: string, str2: string): boolean {
   return true;
 }
 
-console.log(isAnagram2('cvbn', 'cnvb'))
+console.log(isAnagram2('cvbn', 'cmvb'));
+
+const obj = {h: 0};
+if(obj.h){
+  console.log(true);
+}
+else {
+  console.log(false)
+}
