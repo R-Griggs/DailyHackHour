@@ -53,6 +53,6 @@ function removeDuplicates(nums: number[]): number {
   return j;
 }
 
-console.log(removeDuplicates([1, 1, 1, 1, 1, 2, 2, 3, 4, 5 ]));
+console.log(removeDuplicates([1, 2, 2, 2, 2, 2, 3, 3, 4, 5 ]));
 
 module.exports = removeDuplicates;
